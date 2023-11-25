@@ -1,20 +1,5 @@
-@mixin sm {
-  @media (max-width: 765px) {
-    @content; // projected content will be embedded here
-  }
-}
-
-@mixin md {
-  @media (max-width: 960px) {
-    @content; // projected content will be embedded here
-  }
-}
-
-@mixin lg {
-  @media (max-width: 1280px) {
-    @content; // projected content will be embedded here
-  }
-}
+@import "../../../styles/mixin";
+@import "../../../styles/mixin";
 
 .destination_card {
   @include md {

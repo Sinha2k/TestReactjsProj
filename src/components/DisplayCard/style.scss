@@ -1,58 +1,46 @@
-@mixin sm {
-    @media (max-width: 765px) {
-      @content; // projected content will be embedded here
-    }
-  }
-  
-  @mixin md {
-    @media (max-width: 960px) {
-      @content; // projected content will be embedded here
-    }
-  }
-  
-  @mixin lg {
-    @media (max-width: 1280px) {
-      @content; // projected content will be embedded here
-    }
-  }
+@import "../../styles/mixin";
+@import "../../styles/variable";
 
-.display_content{
-    width: calc(100% - 180px);
-    text-align: center;
-    margin-top: 70px;
-    @include md {
-        width: calc(100% - 80px);
+.display_content {
+  width: calc(100% - 180px);
+  text-align: center;
+  margin-top: 70px;
+  @include md {
+    width: calc(100% - 80px);
+  }
+  @include sm {
+    width: calc(100% - 40px);
+  }
+  p {
+    color: rgb(163, 163, 163);
+    font-weight: 600;
+    margin-top: -20px;
+  }
+  h2 {
+    font-size: 34px;
+    font-weight: 700;
+    @include sm {
+      font-size: 28px;
     }
-    p{
-        color: rgb(163, 163, 163);
-        font-weight: 600;
-        margin-top: -20px;
+  }
+  .content_grid {
+    display: grid;
+    column-gap: 22.5px;
+    grid-auto-flow: column;
+    width: 100%;
+    margin-top: 50px;
+    @include sm {
+      grid-auto-flow: row;
+      row-gap: 22.5px;
     }
-    h2{
-        font-size: 34px;
-        font-weight: 700;
-        @include sm {
-          font-size: 28px;
-        }
+    .marketing {
+      width: 100%;
+      img {
+        width: 140px;
+      }
+      p {
+        margin-top: 10px;
+      }
     }
-    .content_grid{
-        display: grid;
-        column-gap: 22.5px;
-        grid-auto-flow: column;
-        width: 100%;
-        margin-top: 50px;
-        @include sm {
-            grid-auto-flow: row;
-            row-gap: 22.5px;
-        }
-        .marketing{
-            width: 100%;
-            img{
-                width: 140px;
-            }
-            p{
-                margin-top: 10px;
-            }
-        }
-    }
+  }
 }
