@@ -1,0 +1,111 @@
+$primary: #ff4a52;
+
+@mixin sm {
+  @media (max-width: 765px) {
+    @content; // projected content will be embedded here
+  }
+}
+
+@mixin md {
+  @media (max-width: 960px) {
+    @content; // projected content will be embedded here
+  }
+}
+
+@mixin lg {
+  @media (max-width: 1280px) {
+    @content; // projected content will be embedded here
+  }
+}
+
+.footer{
+    background-color: black;
+    color: white;
+    width: 100%;
+    margin-top: 70px;
+    padding: 40px 0px 10px 0px;
+    .footer_top{
+        width: 88%;
+        margin-left: 6%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 25px;
+        @include sm {
+            grid-template-columns: 1fr;
+            row-gap: 15px;
+        }
+        .footer_item{
+            width: 100%;
+            .image_footer{
+                width: 70%;
+                @include sm {
+                    width: 40%;
+                }
+            }
+            h4{
+                font-size: 18px;
+            }
+            p {
+                color: rgb(187, 187, 187);
+                margin-bottom: 20px;
+                font-size: 15px;
+                @include md {
+                    font-size: 13px;
+                }
+            }
+            .contact_item{
+                display: flex;
+                align-items: center;
+                margin-top: -10px;
+                p {
+                    margin-left: 10px;
+                }
+            }
+            .display_image {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                row-gap: 10px;
+                @include sm {
+                    row-gap: 20px;
+                }
+                img {
+                    border-radius: 5px;
+                    width: 90%;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .footer_bottom{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        border-top: 1px solid rgb(95, 95, 95);
+        margin-top: 30px;
+        padding-top: 20px;
+        @include sm {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+        }
+        p{
+            margin-left: 6%;
+        }
+        ul{
+            display: flex;
+            list-style: none;
+            padding-left: 0;
+            margin-right: 6%;
+            @include sm {
+                margin-left: 6%;
+            }
+            li{
+                list-style: none;
+                cursor: pointer;
+                margin-right: 10px;
+            }
+        }
+    }
+}

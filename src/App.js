@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import DisplayCard from "./components/DisplayCard";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import data from "./data";
+
+const dataContent = [
+  {
+    id: 0,
+    title: "Popular Destinations",
+    desc: "World's best tourist destinations",
+    type: "Destination",
+  },
+  {
+    id: 1,
+    title: "Best Value Trips",
+    desc: "Best offers trips from us",
+    type: "Trip",
+  },
+  {
+    id: 2,
+    title: "Why Choose Us",
+    desc: "Here are reasons you should plan trip with us",
+    type: "Marketing",
+  },
+  {
+    id: 3,
+    title: "Articles & Tips",
+    desc: "Explore some of the best tips from around the world",
+    type: "Blog",
+  },
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <Header />
+      {dataContent.map((item) => (
+        <DisplayCard
+          key={item.id}
+          type={item.type}
+          listData={data[item.type]}
+          title={item.title}
+          desc={item.desc}
+        />
+      ))}
+      <Footer />
     </div>
   );
 }

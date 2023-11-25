@@ -1,0 +1,43 @@
+$primary: #ff4a52;
+
+@mixin sm {
+  @media (max-width: 765px){
+      @content; // projected content will be embedded here
+  }
+
+}
+
+@mixin md {
+  @media (max-width: 960px){
+      @content; // projected content will be embedded here
+  }
+
+}
+
+@mixin lg {
+  @media (max-width: 1280px){
+      @content; // projected content will be embedded here
+  }
+
+}
+
+.button_container {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 140px;
+  @include sm {
+    width: 100%;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+.button_container:hover{
+  background-color: aqua;
+  transition: 0.5s ease-in-out;
+}
